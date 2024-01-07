@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Python - Variable Annotations
+    Python - Variable Annotations
 
 """
 from typing import Callable
