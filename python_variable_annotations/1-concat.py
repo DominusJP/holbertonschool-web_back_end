@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Python - Variable Annotations
+    Python - Variable Annotations
 
 """
 
 
 def concat(str1: str, str2: str) -> str:
-    """Concatenates two strings and returns the result."""
+    """Concatenates two strings."""
     return str1 + str2
