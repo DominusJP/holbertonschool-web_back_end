@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""
-    Python - Async
-
-"""
+"""Python - Async"""
 import asyncio
 import random
 
