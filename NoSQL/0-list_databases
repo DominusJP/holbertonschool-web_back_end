@@ -1,0 +1,3 @@
+#!/bin/bash
+# Connect to MongoDB and list all databases
+echo "show databases" | mongo
