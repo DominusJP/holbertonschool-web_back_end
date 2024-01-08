@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
     python_async_comprehension
-    
 """
 import asyncio
 
