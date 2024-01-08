@@ -1,2 +1,2 @@
 // All matches
-mongo db.school.find({name: "Holbeton school"})
+db.school.find({name: "Holbeton school"})

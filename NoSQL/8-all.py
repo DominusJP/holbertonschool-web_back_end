@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
-"""
-    Python function that lists 
-    all documents in a collection
-
-"""
+""" PF that lists all documents in a collection"""
 
 
 def list_all(mongo_collection):
-    """ilst docs"""
-    if documents.count() == 0:
+    """list all docs"""
+    if mongo_collection is None:
         return []
-    return documents
+    return mongo_collection.find()
