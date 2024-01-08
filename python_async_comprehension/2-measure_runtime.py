@@ -3,17 +3,13 @@
     python_async_comprehension
 """
 import asyncio
-
-
+import time
 async_comprehension = __import__('1-async_comprehension').async_comprehension
-async def measure_runtime():
+
+
+async def measure_runtime() -> float:
     """02_measure_runtime"""
-    start_time = asyncio.get_event_loop().time()
-    await asyncio.gather(
-        async_comprehension(),
-        async_comprehension(),
-        async_comprehension(),
-        async_comprehension()
-    )
-    end_time = asyncio.get_event_loop().time()
-    return end_time - start_time
+    start = time.time()
+    await asyncio.gather(*(async_comprehension() for i in range(4)))
+    end = time.time()
+    return end - start
