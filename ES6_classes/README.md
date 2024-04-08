@@ -1,1 +1,0 @@
-readmy for ES6_classes
