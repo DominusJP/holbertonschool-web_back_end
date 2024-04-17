@@ -2,24 +2,22 @@
 """excersise 12: Py script that provides some stats about Nginx logs stored in MongoDB"""
 from pymongo import MongoClient
 
-# Connect to MongoDB
-client = MongoClient('mongodb://localhost:27017/')
-db = client.logs
-collection = db.nginx
 
-# Count total number of logs
-total_logs = collection.count_documents({})
+if __name__ == "__main__":
+    client = MongoClient('mongodb://127.0.0.1:27017')
+    db_nginx = client.logs.nginx
+    methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
 
-print(f"{total_logs} logs where {total_logs} is the number of documents in this collection")
+    count_logs = db_nginx.count_documents({})
+    print(f'{count_logs} logs')
 
-# Count methods
-methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
-method_counts = {method: collection.count_documents({"method": method}) for method in methods}
+    print('Methods:')
+    for method in methods:
+        count_method = db_nginx.count_documents({'method': method})
+        print(f'\tmethod {method}: {count_method}')
 
-print("Methods:")
-for method, count in method_counts.items():
-    print(f"\t{count} logs with method {method}")
+    check = db_nginx.count_documents(
+        {"method": "GET", "path": "/status"}
+    )
 
-# Count logs with method=GET and path=/status
-status_logs = collection.count_documents({"method": "GET", "path": "/status"})
-print(f"{status_logs} logs with method=GET and path=/status")
+    print(f'{check} status check')
