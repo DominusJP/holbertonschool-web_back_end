@@ -1,1 +1,1 @@
-readme for holberton web back end third trimester
+readme for ES6_data_manipulation
